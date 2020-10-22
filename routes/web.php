@@ -17,6 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('pizzas', function () {
+    $pizza = ['type' => 'hawwaian', 'base' => 'cheesy crust', 'price' => 10];
+    return view('pizzas', $pizza);
+});
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
